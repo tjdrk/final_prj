@@ -14,6 +14,7 @@ int convert(string a){
     else if(a=="F") return 5;
     else if(a=="G") return 6;
     else if(a=="H") return 7;
+    else return -1;
 }
 
 int main(){
