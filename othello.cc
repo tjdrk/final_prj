@@ -17,8 +17,8 @@ Othello::Othello(){
 int Othello::get_turn(){ return turn; }
 
 void Othello::change_turn(){
-    if(turn==1) turn=2;
-    else turn=1;
+    if(turn==2) turn=1;
+    else turn=2;
 }
 
 bool Othello::mark_check(int row, int col, int turn){

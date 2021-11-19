@@ -6,14 +6,14 @@
 using namespace std;
 
 int convert(string a){
-    if(a=="A") return 0;
-    else if(a=="B") return 1;
-    else if(a=="C") return 2;
-    else if(a=="D") return 3;
-    else if(a=="E") return 4;
-    else if(a=="F") return 5;
-    else if(a=="G") return 6;
-    else if(a=="H") return 7;
+    if(a=="A" || a=="a") return 0;
+    else if(a=="B" || a=="b") return 1;
+    else if(a=="C" || a=="c") return 2;
+    else if(a=="D" || a=="d") return 3;
+    else if(a=="E" || a=="e") return 4;
+    else if(a=="F" || a=="f") return 5;
+    else if(a=="G" || a=="g") return 6;
+    else if(a=="H" || a=="h") return 7;
     else return -1;
 }
 
