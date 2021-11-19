@@ -26,7 +26,8 @@ bool Othello::mark_check(int row, int col, int turn){
     int op=0;
     int mid=1;
     
-    if(stage[row][col]==0){
+    if(row<0 || col<0 || col>7) chk=0;
+    else if(stage[row][col]==0){
         int i=row+1;
         while(i<8){
             if(stage[i][col]==turn){op=1; break;}
