@@ -27,12 +27,13 @@ bool Othello::mark_check(int row, int col, int turn){
     int mid=1;
     
     if(stage[row][col]==0){
-        int i=row+2;
+        int i=row+1;
         while(i<8){
             if(stage[i][col]==turn){op=1; break;}
             i++;
         }
         if(op==1){
+            if(i==row+1) mid=0;
             for(int j=row+1; j<i; j++){
                 if(stage[j][col]==0) mid=0;
             }
@@ -41,12 +42,13 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=row-2;
+        i=row-1;
         while(i>=0){
             if(stage[i][col]==turn){op=1; break;}
             i--;
         }
         if(op==1){
+            if(i==row-1) mid=0;
             for(int j=row-1; j>i; j--){
                 if(stage[j][col]==0) mid=0;
             }
@@ -55,12 +57,13 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
     
-        i=col+2;
+        i=col+1;
         while(i<8){
             if(stage[row][i]==turn){op=1; break;}
             i++;
         }
         if(op==1){
+            if(i==col+1) mid=0;
             for(int j=col+1; j<i; j++) {
                 if(stage[row][j]==0) mid=0;
             }
@@ -69,12 +72,13 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=col-2;
+        i=col-1;
         while(i>=0){
             if(stage[row][i]==turn){op=1; break;}
             i--;
         }
         if(op==1){
+            if(i==col-1) mid=0;
             for(int j=col-1; j>i; j--){
                 if(stage[row][j]==0) mid=0;
             }
@@ -83,8 +87,8 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=row+2;
-        int i2=col+2;
+        i=row+1;
+        int i2=col+1;
         while(i<8 && i2<8){
             if(stage[i][i2]==turn){op=1; break;}
             i++;
@@ -93,6 +97,7 @@ bool Othello::mark_check(int row, int col, int turn){
         if(op==1){
             int j=row+1;
             int j2=col+1;
+            if(i==row+1) mid=0;
             while(j<i){
                 if(stage[j][j2]==0) mid=0;
                 j++;
@@ -103,8 +108,8 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=row-2;
-        i2=col-2;
+        i=row-1;
+        i2=col-1;
         while(i>=0 && i2>=0){
             if(stage[i][i2]==turn){op=1; break;}
             i--;
@@ -113,6 +118,7 @@ bool Othello::mark_check(int row, int col, int turn){
         if(op==1){
             int j=row-1;
             int j2=col-1;
+            if(i==row-1) mid=0;
             while(j>i){
                 if(stage[j][j2]==0) mid=0;
                 j--;
@@ -123,8 +129,8 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=row+2;
-        i2=col-2;
+        i=row+1;
+        i2=col-1;
         while(i<8 && i2>=0){
             if(stage[i][i2]==turn){op=1; break;}
             i++;
@@ -133,6 +139,7 @@ bool Othello::mark_check(int row, int col, int turn){
         if(op==1){
             int j=row+1;
             int j2=col-1;
+            if(i==row+1) mid=0;
             while(j<i){
                 if(stage[j][j2]==0) mid=0;
                 j++;
@@ -143,8 +150,8 @@ bool Othello::mark_check(int row, int col, int turn){
             op=0;
         }
 
-        i=row-2;
-        i2=col+2;
+        i=row-1;
+        i2=col+1;
         while(i>=0 && i2<8){
             if(stage[i][i2]==turn){op=1; break;}
             i--;
@@ -153,6 +160,7 @@ bool Othello::mark_check(int row, int col, int turn){
         if(op==1){
             int j=row-1;
             int j2=col+1;
+            if(i==row-1) mid=0;
             while(j>i){
                 if(stage[j][j2]==0) mid=0;
                 j--;
@@ -172,6 +180,7 @@ void Othello::put_mark(int row, int col, int turn){
     
     if(mark_check(row,col,turn)==1){
         stage[row][col]=turn;
+        
         int i=row+1;
         while(i<8){
             if(stage[i][col]==turn){op=1; break;}
