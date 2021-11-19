@@ -20,8 +20,8 @@ int convert(string a){
 int main(){
     Othello game;
     cout << "Welcome to Othello Game!!" << endl;
-    cout << "Player1 marks with 'O' symbol." << endl;
-    cout << "Player2 marks with 'X' symbol." << endl;
+    cout << "Player1 marks with '○' symbol." << endl;
+    cout << "Player2 marks with '●' symbol." << endl;
     cout << "Type the place where you want to put your mark on!!" << endl;
     cout << "ex) A5 / F2 / D8 ..." << endl;
 
@@ -31,7 +31,7 @@ int main(){
         game.print_stage();
         if(game.get_turn()==1){
             if(game.game_check(1)==1){
-                cout << "Now it's Player1's turn. Type the place : " << endl;
+                cout << "Now it's Player1's turn. Type the place : ";
                 cin >> input;
                 row=convert(input.substr(0,1));
                 col = stoi(input.substr(1,1))-1;
@@ -52,7 +52,7 @@ int main(){
         }
         else if(game.get_turn()==2){
             if(game.game_check(2)==1){
-                cout << "Now it's Player2's turn. Type the place : " << endl;
+                cout << "Now it's Player2's turn. Type the place : ";
                 cin >> input;
                 row=convert(input.substr(0,1));
                 col = stoi(input.substr(1,1))-1;

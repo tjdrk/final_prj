@@ -377,8 +377,8 @@ void Othello::print_stage(){
         cout << char(col+i) << "|";
         for(int j=0; j<8; j++){
             if(stage[i][j]==0) cout << "   |";
-            else if(stage[i][j]==1) cout << " O |";
-            else cout << " X |";
+            else if(stage[i][j]==1) cout << " ○ |";
+            else cout << " ● |";
         }
         cout << endl;
         cout << "  --- --- --- --- --- --- --- ---" << endl;
