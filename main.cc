@@ -28,10 +28,11 @@ int main(){
     while(1){
         int row, col;
         string input;
+        cout << endl;
         game.print_stage();
         if(game.get_turn()==1){
             if(game.game_check(1)==1){
-                cout << "Now it's Player1's turn. Type the place : ";
+                cout << "Now it's Player1(○)'s turn. Type the place : ";
                 cin >> input;
                 row=convert(input.substr(0,1));
                 col = stoi(input.substr(1,1))-1;
@@ -52,7 +53,7 @@ int main(){
         }
         else if(game.get_turn()==2){
             if(game.game_check(2)==1){
-                cout << "Now it's Player2's turn. Type the place : ";
+                cout << "Now it's Player2(●)'s turn. Type the place : ";
                 cin >> input;
                 row=convert(input.substr(0,1));
                 col = stoi(input.substr(1,1))-1;
@@ -76,6 +77,7 @@ int main(){
             exit(1);
         }
     }
+    cout << endl;
     game.print_stage();
     cout << "The game is over!!!" << endl;
     cout << "Player1 got " << game.get_score1() << " points." << endl;
